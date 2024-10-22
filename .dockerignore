@@ -5,3 +5,5 @@
 /envs/prod.env.example
 /.vitepress/cache
 /node_modules
+.git
+.idea
