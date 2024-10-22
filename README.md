@@ -1,5 +1,5 @@
 <div align=center>
-   <img width=150 src=https://raw.githubusercontent.com/FoPPi/GFormPassAPI/master/docs/logo.png alt='logo' />
+   <img width=150 src=https://github.com/FoPPi/GFormPassAPI/blob/master/docs/logo.png?raw=true alt='logo' />
    <h1>GFormPassAPI</h1>
 </div>
 
