@@ -13,7 +13,7 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code and .env file
+# Copy application code and dev.env file
 COPY . .
 
 # Expose the port the app runs on

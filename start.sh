@@ -79,10 +79,10 @@ fi
 # Create password file
 create_password_file
 
-# Check if docker-compose.yaml exists and run it
-if [ -f "docker-compose.yaml" ]; then
-    echo "docker-compose.yaml found. Running Docker Compose..."
-    docker-compose up -d
+# Check if docker-compose-prod.yaml exists and run it
+if [ -f "docker-compose-prod.yaml" ]; then
+    echo "docker-compose-prod.yaml found. Running Docker Compose..."
+    docker-compose -f docker-compose-prod.yaml --env-file ./envs/prod.env  up -d
 else
-    echo "docker-compose.yaml not found. Please make sure it is in the current directory."
+    echo "docker-compose-prod.yaml not found. Please make sure it is in the current directory."
 fi

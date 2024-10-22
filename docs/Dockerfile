@@ -1,5 +1,5 @@
 # Use an official Node runtime as the parent image
-FROM node:23.0.0
+FROM node:22.10.0-bullseye
 
 # Set the working directory in the container
 WORKDIR /GFormPassDocs

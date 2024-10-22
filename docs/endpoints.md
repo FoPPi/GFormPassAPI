@@ -40,7 +40,7 @@ X-Key: {{donatello_key}}
 }
 ```
 
-* 403 Forbidden Forbidden
+* 403 Forbidden
 ```json
 {
   "detail": "Donation amount must be greater than 5 USD/EUR"
@@ -49,6 +49,11 @@ X-Key: {{donatello_key}}
 ```json
 {
   "detail": "Donation amount must be greater than 200 UAH"
+}
+```
+```json
+{
+  "detail": "Not authenticated"
 }
 ```
 
@@ -79,10 +84,22 @@ X-User-Key: {{user_key}}
 }
 ```
 
-* 403 Forbidden Forbidden
+* 403 Forbidden
 ```json
 {
   "detail": "Key is already active"
+}
+```
+```json
+{
+  "detail": "Not authenticated"
+}
+```
+
+* 500 Internal Server Error
+```json
+{
+  "detail": "SOME ERROR"
 }
 ```
 
@@ -159,7 +176,7 @@ X-User-Key: {{user_key}}
 }
 ```
 
-* 403 Forbidden Forbidden
+* 403 Forbidden
 ```json
 {
   "detail": "Key not found"
@@ -168,6 +185,25 @@ X-User-Key: {{user_key}}
 ```json
 {
   "detail": "Key not active"
+}
+```
+```json
+{
+  "detail": "Not authenticated"
+}
+```
+
+* 408 Request Timeout
+```json
+{
+   "detail": "Assistant response took too long" 
+}
+```
+
+* 500 Internal Server Error
+```json
+{
+  "detail": "SOME ERROR"
 }
 ```
 
@@ -191,6 +227,19 @@ X-Admin-Key: {{admin_key}}
 }
 ```
 
+* 403 Forbidden
+```json
+{
+  "detail": "Not authenticated"
+}
+```
+
+* 500 Internal Server Error
+```json
+{
+  "detail": "SOME ERROR"
+}
+```
 
 ### 5. Delete Expired Questions
 
@@ -208,5 +257,19 @@ X-Admin-Key: {{admin_key}}
 ```json
 {
   "status": "success"
+}
+```
+
+* 403 Forbidden
+```json
+{
+  "detail": "Not authenticated"
+}
+```
+
+* 500 Internal Server Error
+```json
+{
+  "detail": "SOME ERROR"
 }
 ```

@@ -1,22 +1,19 @@
 import os
 from functools import lru_cache
-
 from dotenv import load_dotenv
 from pydantic.v1 import BaseSettings
 
-load_dotenv()
-
+# Load environment variables from the new path
+load_dotenv('envs/dev.env')
 
 class Settings(BaseSettings):
     # Server settings
     PROJECT_NAME: str = "GFormPass API"
     VERSION: str = "1.0.0"
 
-
-
     # Database settings
     POSTGRES_HOST: str = os.getenv("POSTGRES_HOST")
-    POSTGRES_PORT: int = int(os.getenv("POSTGRES_PORT"))
+    POSTGRES_PORT: int = int(os.getenv("POSTGRES_PORT", "5432"))  # Added default for safety
     POSTGRES_USER: str = os.getenv("POSTGRES_USER")
     POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD")
     POSTGRES_DB: str = os.getenv("POSTGRES_DB")
@@ -41,11 +38,11 @@ class Settings(BaseSettings):
 
     class Config:
         case_sensitive = True
-
+        env_file = 'envs/dev.env'  # Added explicit env_file configuration
+        env_file_encoding = 'utf-8'
 
 @lru_cache
 def get_settings():
     return Settings()
-
 
 settings = get_settings()

@@ -1,0 +1,7 @@
+/nginx/.htpasswd
+/nginx/secure_credentials.txt
+/logs
+/envs/dev.env.example
+/envs/prod.env.example
+/.vitepress/cache
+/node_modules

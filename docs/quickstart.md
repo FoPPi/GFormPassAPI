@@ -38,6 +38,16 @@ sh start.sh
 
 > After a few moments, all components will be up and running, and you can start using the API at `http://127.0.0.1:8000`.
 
+### Step 4: Uninstall the Application
+
+1. Navigate to the project directory in your terminal.
+2. Run the following command to uninstall the application:
+
+```bash
+chmod +x uninstall.sh
+sh uninstall.sh
+```
+
 ## What's Next?
 
 You are now ready to connect to the database or use the **GFormPassAPI**.
