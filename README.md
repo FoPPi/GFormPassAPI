@@ -5,7 +5,7 @@
 
 ## Description
 
-This project is a [brief project type or description, e.g., "FastAPI-based donation platform using Docker"] designed to [key functionality, e.g., "process user donations securely and efficiently using a headless API system"]. It includes key features like user key generation, API integration, and real-time updates.
+This project is a api for Google Form Assistant designed to process AI functionalities.
 
 ## Features
 
