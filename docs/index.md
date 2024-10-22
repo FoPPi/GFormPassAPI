@@ -25,3 +25,35 @@ features:
     details: Update user limits and manage expired questions efficiently.
 ---
 
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme'
+
+const members = [
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/67471841?v=4',
+    name: 'Mike',
+    title: 'Developer',
+    links: [
+      { icon: 'github', link: 'https://github.com/FoPPi' },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/in/foppi' },
+    ]
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/81939899?v=4',
+    name: 'Denis',
+    title: 'Developer',
+    links: [
+      { icon: 'github', link: 'https://github.com/DenisGas' },
+      { icon: 'linkedin', link: 'www.linkedin.com/in/denis-gasilo' },
+    ]
+  },
+]
+</script>
+
+---
+# Our Team
+
+Say hello to our awesome team.
+
+<VPTeamMembers size="small" :members="members" />
+

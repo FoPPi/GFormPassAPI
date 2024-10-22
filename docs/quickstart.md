@@ -18,7 +18,7 @@ Before starting, ensure the following:
 2. Run the following command:
 
 ```bash
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/FoPPi/GFormPassAPI.git
 ```
 
 ### Step 2: Configure Environment Variables

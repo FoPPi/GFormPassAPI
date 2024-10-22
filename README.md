@@ -1,124 +1,46 @@
-### Documentation for FastAPI Application Setup and API Testing
+<div align=center>
+   <img width=150 src=https://raw.githubusercontent.com/FoPPi/GFormPassAPI/master/docs/logo.png alt='logo' />
+   <h1>GFormPassAPI</h1>
+</div>
 
-This document provides comprehensive instructions for setting up and testing a FastAPI application using Uvicorn as the server. Additionally, it outlines the procedure for using Visual Studio Code with the REST Client extension to test API endpoints effectively.
+## Description
 
-#### Prerequisites
+This project is a [brief project type or description, e.g., "FastAPI-based donation platform using Docker"] designed to [key functionality, e.g., "process user donations securely and efficiently using a headless API system"]. It includes key features like user key generation, API integration, and real-time updates.
 
-Ensure Python is installed on your system, along with `pip` for managing Python packages.
+## Features
 
-#### Installation Steps
+- **User Key Management**: Generate and activate user keys for secure API access.
+- **Donation Handling**: Process and manage user donations with customizable amounts and currencies.
+- **GPT Question Handling**: Send questions to GPT for automated processing and response.
+- **Admin Controls**: Update user limits and manage expired questions efficiently.
 
-1. **Install Required Packages**:
-   
-   To avoid potential conflicts with other projects, it is recommended to use a virtual environment for package installations. Execute the following command to install the necessary packages:
+## Setup Instructions
 
+Follow these steps to set up the project on your local machine:
+
+1. **Clone the repository**:
    ```bash
-   pip install -r requirements.txt
+   git clone https://github.com/FoPPi/GFormPassAPI.git
    ```
 
-   This command installs all dependencies listed in your `requirements.txt`, which should include FastAPI, Uvicorn, and any others your application requires.
+2. **Configure Environment Variables**:
+   - Rename `.env.example` to `.env`.
+   - Add your API keys, admin keys, and other necessary configurations.
 
-2. **Running the Application**:
-   
-   Start your FastAPI application using the following command. The `--reload` flag is particularly useful during development as it allows the server to automatically reload upon code changes.
-
-   ```bash
-   uvicorn main:app --reload
-   ```
-
-   `main` is the Python file where your FastAPI app is defined (`main.py`), and `app` is the FastAPI instance.
-
-3. **Setup API Key**:
-
-   - Create a `.env` file in the root directory of your project. This file will store the API key needed for authentication.
-
-   ```dotenv
-   POSTGRES_DB=
-   POSTGRES_USER=
-   POSTGRES_PASSWORD=
-   POSTGRES_HOST=
-   POSTGRES_PORT=
-   
-   OPENAI_API_KEY=
-   OPENAI_ASSISTANT_ID=
-   
-   API_KEY=
-   ADMIN_KEY=
-   DONATELLO_KEY=
-   DONATELLO_API_KEY=
-   
-   SMTP_USERNAME=
-   SMTP_PASSWORD=
-   SMTP_HOST=
-   SMTP_PORT=
-   ```
-
-   Use this API key to authenticate requests to your API endpoints.
-
-#### API Testing
-
-Utilize the REST Client extension in Visual Studio Code to facilitate API testing. Configure your requests in a `test_main.http` file as follows:
-
-1. **Global Variables**:
-   
-   Define essential variables at the start of the file for easy management of frequently used data like host URL, API key, and user key.
-
-   ```http
-   @host = http://127.0.0.1:8000
-   @api_key = your_actual_api_key_here
-   @donatello_key = your_actual_donatello_api_key_here
-   @user_key = Enter_Key_Here_After_Generation
-   ```
-
-#### API Endpoints
-
-   - **Generate User**:
-     This endpoint generates a new `user_key`.
-   
-     ```http
-     ### Generate User
-     POST {{host}}/user/donates
-     Content-Type: application/json
-     X-Key: {{donatello_key}}
-    
-     {
-       "pubId": "D41-123123",
-       "message": "your_mail",
-       "amount": "100"
-     }
+3. **Run the project**:
+   - Make the start script executable:
+     ```bash
+     chmod +x start.sh
+     ```
+   - Start the application:
+     ```bash
+     sh start.sh
      ```
 
-   - **Activate User**:
-     This endpoint activates the `user_key` obtained from the "Generate User" step.
-   
-     ```http
-     ### Activate User
-     POST {{host}}/user/activate
-     Content-Type: application/json
-     X-Api-Key: {{api_key}}
-     X-User-Key: {{user_key}}
-     ```
+4. **Access the API**:  
+   The application will be available at `http://127.0.0.1:8000`.
 
-   - **GPT Request**:
-     Processes a question through GPT using the specified parameters.
-   
-     ```http
-     ### GPT Request
-     POST {{host}}/
-     Content-Type: application/json
-     X-Api-Key: {{api_key}}
-     X-User-Key: {{user_key}}
 
-     {
-       "test_type": "Math",
-       "question": "What is 2 + 2?",
-       "prompt": 1,
-       "answers": ["1", "2", "3", "4"]
-     }
-     ```
+## License
 
-#### How to Use
-
-- Open your `test_main.http` file in Visual Studio Code.
-- Position your cursor over the name of a request and click the `Send Request` link that appears above it to execute.
-- Ensure your FastAPI server is active as per the earlier instructions.
+This project is licensed under the [RPL1.5 License](LICENSE.md).

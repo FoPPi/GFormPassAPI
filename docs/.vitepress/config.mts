@@ -6,6 +6,7 @@ export default defineConfig({
   description: "This project is a api for Google Form Assistant designed to process AI functionalities.",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
     ],
@@ -21,7 +22,13 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/FoPPi/GFormPassAPI' }
+    ],
+
+    footer: {
+      message: 'Released under the Reciprocal Public License 1.5 (RPL1.5).',
+      copyright: 'Copyright © 2001-2024 Technical Pursuit Inc., All Rights Reserved.'
+    }
+
   }
 })
